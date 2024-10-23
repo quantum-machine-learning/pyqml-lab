@@ -1,5 +1,5 @@
 
-ARG JUPYTER_ENV=development
+ARG JUPYTER_ENV=production
 
 FROM pyqml/lab:24.10.1 AS base
 
@@ -13,7 +13,6 @@ FROM pyqml/lab:24.10.1 AS base
 # Paths                                                                       #
 ###############################################################################
 ENV MAIN_PATH=/usr/local/bin/lab
-ENV LIBS_PATH=${MAIN_PATH}/libs
 ENV CONFIG_PATH=${MAIN_PATH}/config
 ENV NOTEBOOK_PATH=${MAIN_PATH}/notebooks
 
@@ -27,12 +26,11 @@ RUN poetry config installer.max-workers 10
 
 
 
-
-RUN echo ${JUPYTER_ENV}
-
-
+ARG JUPYTER_ENV=production
+ENV JUPYTER_ENV=${JUPYTER_ENV}
 
 ARG JUPYTER_PORT=8888
+ENV JUPYTER_PORT=${JUPYTER_PORT}
 
 ###############################################################################
 #   Development                                                               #
@@ -48,8 +46,7 @@ RUN poetry install
 ###############################################################################
 FROM base AS interim-production
 
-# we MUST NOT create a virtual environment because otherwise, AWS won't find the libs
-RUN poetry config virtualenvs.create false && poetry install 
+RUN poetry install 
 
 ###############################################################################
 #   INTERIM                                                                   #

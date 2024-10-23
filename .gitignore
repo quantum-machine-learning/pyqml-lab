@@ -1,5 +1,6 @@
 # Idea / PyCharm
 .idea/
+.Trash*
 
 # Jupyter Notebook
 .ipynb_checkpoints

@@ -6,7 +6,13 @@ export IP_ADDR=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 # load the environment variables for the build process
 set -a # automatically export all variables
-source ./config/.env
+if [ -f ./config/.env ]; then
+    source ./config/.env
+else
+    echo "Warning: ./config/.env file not found."
+    JUPYTER_PORT=8888
+    JUPYTER_ENV=production
+fi
 set +a
 
 echo Configuration: $JUPYTER_ENV $JUPYTER_PORT

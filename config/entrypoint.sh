@@ -3,7 +3,13 @@
 
 # load the environment variables
 set -a # automatically export all variables
-source ./config/.env # the path where we put the env-file, away from the volume that would override it!
+if [ -f ./config/.env ]; then
+    source ./config/.env
+else
+    echo "Warning: ./config/.env file not found."
+    JUPYTER_PORT=8888
+    JUPYTER_ENV=production
+fi
 set +a
 
 cd ~

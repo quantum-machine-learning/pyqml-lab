@@ -21,6 +21,7 @@ You can find the source code at [GitHub](https://github.com/quantum-machine-lear
 
 Versions:
 
+- Ubuntu 24.04
 - Python 3.13.0
 - JupyterLab 4.2.5
 - Qiskit 1.2.4
@@ -41,7 +42,7 @@ The following picture shows `pyqml-lab` in action. **Use** it with two simple st
 
 ## Customization
 
-### Add new Python libraries/packeages
+### Add new Python libraries/packages
 
 Inside Jupyterlab, open a terminal and run `poetry add {package_name}`.
 
