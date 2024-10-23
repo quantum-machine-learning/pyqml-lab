@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pyqml-lab"
+version = "0.1.0"
+description = ""
+authors = ["Dr. Frank Zickert <mail@pyqml.com>"]
+readme = "README.md"
+packages = [{include = "*", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+numpy = "^2.1.2"
+qiskit = "^1.2.4"
+jupyterlab = "^4.2.5"
+matplotlib = "^3.9.2"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
