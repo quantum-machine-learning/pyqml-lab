@@ -12,7 +12,7 @@ numpy = "^2.1.2"
 qiskit = "^1.2.4"
 jupyterlab = "^4.2.5"
 matplotlib = "^3.9.2"
-
+jupyterlab-git = "^0.50.1"
 
 
 [build-system]

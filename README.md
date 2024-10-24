@@ -13,7 +13,7 @@ For you can review and edit scripts, you get full control of your configuration 
 
 ## Repository Overview
 
-**Last Update: Oct 22, 2024**
+**Last Update: Oct 24, 2024**
 
 The base image is published at [Docker Hub](https://hub.docker.com/r/pyqml/lab).
 You can find the source code at [GitHub](https://github.com/quantum-machine-learning/pyqml-lab).
@@ -52,3 +52,13 @@ You can also add the package to the `pyproject.toml` file and run `poetry instal
 
 You can add new packages to the `lab.Dockerfile` and restart Jupyterlab (stop any running container and run `bash run.sh`).
 
+
+
+## Changelog
+
+**2024-10-24 v24.10.2**
+- Added git and JupyterLab git extension
+- load .ssh-config when stored in `notebooks/.ssh/`
+- Added server config (allow to show hidden files)
+
+**2024-10-22 v24.10.1** - Initial Release 

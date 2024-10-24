@@ -1,0 +1,6 @@
+
+# ssh-credentials
+.ssh
+
+# temporary notebook files
+.ipynb_checkpoints
