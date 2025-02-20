@@ -1,13 +1,20 @@
 
 ARG JUPYTER_ENV=production
 
-FROM pyqml/lab:24.10.1 AS base
+FROM pyqml/lab:25.02.0 AS base
 
 ###############################################################################
 # Add system-level dependencies here                                          #
 ###############################################################################
 
 RUN apt-get install git -y
+
+# required of qiskit-aer
+RUN apt-get install libblas-dev liblapack-dev -y
+
+
+# required to draw latex circuits
+RUN apt-get install poppler-utils -y
 
 ###############################################################################
 # Paths                                                                       #

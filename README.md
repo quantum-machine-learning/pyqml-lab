@@ -13,7 +13,7 @@ For you can review and edit scripts, you get full control of your configuration 
 
 ## Repository Overview
 
-**Last Update: Oct 24, 2024**
+**Last Update: Feb 20, 2025**
 
 The base image is published at [Docker Hub](https://hub.docker.com/r/pyqml/lab).
 You can find the source code at [GitHub](https://github.com/quantum-machine-learning/pyqml-lab).
@@ -22,9 +22,9 @@ You can find the source code at [GitHub](https://github.com/quantum-machine-lear
 Versions:
 
 - Ubuntu 24.04
-- Python 3.13.0
-- JupyterLab 4.2.5
-- Qiskit 1.2.4
+- Python 3.13.2
+- JupyterLab 4.3.5
+- Qiskit 1.3.2
 
 
 ## Start
@@ -52,9 +52,28 @@ You can also add the package to the `pyproject.toml` file and run `poetry instal
 
 You can add new packages to the `lab.Dockerfile` and restart Jupyterlab (stop any running container and run `bash run.sh`).
 
+### Set password
 
+1. Open a Python3 console
+1. run command `from jupyter_server.auth import passwd`
+1. run `passwd()`
+1. enter your password
+1. copy the output to the `jupyter_lab_config.py` file
+1. the final line should look like `c.ServerApp.password = 'argon2:$argon2id$v=19$m=10240,t=10,p=8...pg'`
+1. restart JupyterLab
 
 ## Changelog
+
+**2025-02-20 v25.02.0**
+- Added qiskit-finance (v0.4.1)
+- Update Python to v3.13.2
+- Update JupyterLab to v4.3.5
+- Update Qiskit to v1.3.2
+
+
+**2024-12-03 v24.12.1**
+- Added Qiskit-Aer
+
 
 **2024-10-24 v24.10.2**
 - Added git and JupyterLab git extension

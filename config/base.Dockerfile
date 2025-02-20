@@ -1,7 +1,7 @@
 # use the current LTS version
 FROM ubuntu:24.04
 
-ARG CACHEBURST=PL1
+ARG CACHEBURST=PL3
 
 # this is a script
 ENV DEBIAN_FRONTEND=noninteractive
@@ -19,9 +19,9 @@ RUN apt-get install curl wget -y
 # install python, version of Oct 2024
 RUN mkdir /tmp/Python313 \
     && cd /tmp/Python313 \
-    && wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tar.xz \
-    && tar xvf Python-3.13.0.tar.xz \
-    && cd /tmp/Python313/Python-3.13.0 \
+    && wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz \
+    && tar xvf Python-3.13.2.tar.xz \
+    && cd /tmp/Python313/Python-3.13.2 \
     && ./configure --enable-optimizations  \
     && make altinstall
 
