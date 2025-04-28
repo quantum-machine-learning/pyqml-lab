@@ -13,7 +13,7 @@ For you can review and edit scripts, you get full control of your configuration 
 
 ## Repository Overview
 
-**Last Update: Feb 20, 2025**
+**Last Update: April 28, 2025**
 
 The base image is published at [Docker Hub](https://hub.docker.com/r/pyqml/lab).
 You can find the source code at [GitHub](https://github.com/quantum-machine-learning/pyqml-lab).
@@ -22,9 +22,9 @@ You can find the source code at [GitHub](https://github.com/quantum-machine-lear
 Versions:
 
 - Ubuntu 24.04
-- Python 3.13.2
-- JupyterLab 4.3.5
-- Qiskit 1.3.2
+- Python 3.13.3
+- JupyterLab 4.4.1
+- Qiskit 2.0.0
 
 
 ## Start
@@ -63,6 +63,17 @@ You can add new packages to the `lab.Dockerfile` and restart Jupyterlab (stop an
 1. restart JupyterLab
 
 ## Changelog
+
+**2025-04-28 v25.04.0**
+- Update Python to v3.13.3
+- Update JupyterLab to v4.4.1
+- Update Qiskit to v2.0.0
+- Update Qiskit-Aer to v0.17.0
+- Added qiskit_ibm_runtime 0.38.0
+- Added qiskit-machine-learning 0.8.2
+- Update Numpy to v2.2.5
+- Update Matplotlib to v3.10.1
+
 
 **2025-02-20 v25.02.0**
 - Added qiskit-finance (v0.4.1)

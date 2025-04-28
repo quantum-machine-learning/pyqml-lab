@@ -1,7 +1,7 @@
 
 ARG JUPYTER_ENV=production
 
-FROM pyqml/lab:25.02.0 AS base
+FROM pyqml/lab:25.04.0 AS base
 
 ###############################################################################
 # Add system-level dependencies here                                          #

@@ -1,7 +1,7 @@
 # use the current LTS version
 FROM ubuntu:24.04
 
-ARG CACHEBURST=PL3
+ARG CACHEBURST=PL4
 
 # this is a script
 ENV DEBIAN_FRONTEND=noninteractive
@@ -16,12 +16,12 @@ RUN apt-get install build-essential libssl-dev libffi-dev python3-dev -f -y
 RUN apt-get install libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev -f -y
 RUN apt-get install curl wget -y
 
-# install python, version of Oct 2024
+# install python, version of April 2025
 RUN mkdir /tmp/Python313 \
     && cd /tmp/Python313 \
-    && wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz \
-    && tar xvf Python-3.13.2.tar.xz \
-    && cd /tmp/Python313/Python-3.13.2 \
+    && wget https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tar.xz \
+    && tar xvf Python-3.13.3.tar.xz \
+    && cd /tmp/Python313/Python-3.13.3 \
     && ./configure --enable-optimizations  \
     && make altinstall
 
